@@ -1,6 +1,6 @@
 RewslyFrancisco::Application.routes.draw do
-  # get "stories_controller/index"
-
+ 
+#sets the root to the staries_controller index
   root 'stories_controller#index'
   get '/stories', to: 'stories_controller#index'
 
