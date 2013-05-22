@@ -1,6 +1,7 @@
 <h3><%= @story.title %></h3>
     <ul>
     <li><%= link_to "Link", @story.link %></li>
-    <li><%= @story.category %></li>
-    <li><%= @story.upvotes %></li>
+    <li>Category: <%= @story.category %></li>
+    <li>Category: <%= @story.upvotes %></li>
     </ul>
+     <%= link_to "Back", root_path%>
