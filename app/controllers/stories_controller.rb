@@ -17,10 +17,12 @@ class StoriesController < ApplicationController
   	stories_params = params.require('story').permit(:title, :link, :category)
   	@story = Story.new(stories_params)
     @story.upvotes = 1
-    @story.save
+    if @story.save
     redirect_to @story
+  else
+    render 'new'
   end
-
+end
 
 def show
   @story = Story.find(params[:id])

@@ -1,5 +1,8 @@
 class Story < ActiveRecord::Base
 	validates :title, :link, :category, :upvotes, presence: true
+	validates :title, length: {minimum: 5}
+	validates :link, length: {minimum: 5}
+	validates :link, :format => URI::regexp(%w(http https))
 	
 	
 
