@@ -2,6 +2,8 @@
     <ul>
     <li><%= link_to "Link", @story.link %></li>
     <li>Category: <%= @story.category %></li>
-    <li>Category: <%= @story.upvotes %></li>
+    <li>Upvotes: <%= @story.upvotes %></li>
+    <li>Source: <%= @story.source.name %></li>
+
     </ul>
      <%= link_to "Back", root_path%>

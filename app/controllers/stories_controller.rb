@@ -11,10 +11,11 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
+    @source = Source.all
   end
 
   def create
-  	stories_params = params.require('story').permit(:title, :link, :category)
+  	stories_params = params.require('story').permit(:title, :link, :category, :source_id)
   	@story = Story.new(stories_params)
     @story.upvotes = 1
     if @story.save

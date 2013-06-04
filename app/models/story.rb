@@ -4,6 +4,9 @@ class Story < ActiveRecord::Base
 	validates :link, length: {minimum: 5}
 	validates :link, :format => URI::regexp(%w(http https))
 	
+	belongs_to :user
+	belongs_to :source
+	has_many :comments, :as => :commentable
 	
 
 def self.search_for(query)
